@@ -1,8 +1,10 @@
 package com.fac.kanban.Domain.Entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.CascadeType;
@@ -49,7 +51,7 @@ public class Projeto {
     @OneToMany(mappedBy = "projeto", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ProjetoResponsavel> projetoResponsaveis = new HashSet<>();
 
-    protected Projeto() { }
+    public Projeto() { }
 
     public Projeto(Long id, String nome, Integer status, Date dtInicioPrevisto, Date dtTerminoPrevisto,
     Date dtInicioRealizado, Date dtTerminoRealizado, float diasAtraso, float percTempoRestante) {
@@ -134,6 +136,11 @@ public class Projeto {
 
     public void setPercTempoRestante(float percTempoRestante) {
         this.percTempoRestante = percTempoRestante;
+    }
+
+    public void setDtInicioRealizado(LocalDate now) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDtInicioRealizado'");
     }
 
 
