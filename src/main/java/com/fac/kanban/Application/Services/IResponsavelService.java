@@ -1,18 +1,18 @@
 package com.fac.kanban.Application.Services;
 
-import java.util.List;
-
+import com.fac.kanban.Application.DTOs.ResponsavelDto;
+import com.fac.kanban.Application.Exceptions.ApiResponse;
 import com.fac.kanban.Domain.Entities.Responsavel;
 
 public interface IResponsavelService {
+
+    ApiResponse<Responsavel> criarResponsavel(ResponsavelDto responsavelDto);
+
+    ApiResponse<Responsavel> buscarResponsavelPorId(Long id);
     
-    void criarResponsavel(Responsavel responsavel);
+    ApiResponse<Responsavel> listarResponsaveis();
 
-    Responsavel buscarResponsavelPorId(Long id);
-    
-    List<Responsavel> listarResponsaveis();
+    ApiResponse<Responsavel> atualizarResponsavel(ResponsavelDto responsavelDto);
 
-    void atualizarResponsavel(Long id, Responsavel responsavel);
-
-    void deletarResponsavel(Long id);  
+    ApiResponse<Void> deletarResponsavel(Long id);
 }
