@@ -33,7 +33,7 @@ public class Responsavel {
     @OneToMany(mappedBy = "responsavel", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ProjetoResponsavel> projetoResponsaveis = new HashSet<>();
 
-    protected Responsavel() { }
+    public Responsavel() { }
 
     public Responsavel(Long id, String nome, String email, String cargo) {
         this.id = id;
