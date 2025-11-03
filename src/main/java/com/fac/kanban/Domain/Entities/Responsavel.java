@@ -24,7 +24,7 @@ public class Responsavel {
     @Column(name = "nome",  nullable = false, length = 60)
     private String nome;
 
-    @Column(name = "email", nullable = false, length = 70)
+    @Column(unique = true, name = "email", nullable = false, length = 70)
     private String email;
 
     @Column(name = "cargo", length = 60)

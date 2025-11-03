@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fac.kanban.Application.DTOs.ProjetoDto;
 import com.fac.kanban.Application.DTOs.ProjetoNovoDto;
 import com.fac.kanban.Application.Exceptions.ApiResponse;
 import com.fac.kanban.Application.Services.IProjetoService;
@@ -23,31 +24,31 @@ public class ProjetoController {
     private IProjetoService projetoService;
     
     @GetMapping("/listar")
-    public ResponseEntity<ApiResponse<Projeto>> getAllProjetos() {
+    public ResponseEntity<ApiResponse<ProjetoDto>> getAllProjetos() {
 
         return ResponseEntity.ok(projetoService.listarProjetos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<Projeto>> getProjetoById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse<ProjetoDto>> getProjetoById(@PathVariable Long id) {
 
         return ResponseEntity.ok(projetoService.buscarProjetoPorId(id));
     }
 
     @PostMapping("/criar")
-    public ResponseEntity<ApiResponse<Projeto>> createProjeto(
-        @RequestBody @Validated(ProjetoNovoDto.OnCreate.class) ProjetoNovoDto projetoNovoDto) {
+    public ResponseEntity<ApiResponse<ProjetoDto>> createProjeto(
+        @RequestBody @Validated(ProjetoNovoDto.OnCreate.class) ProjetoDto projetoDto) {
 
-        var projeto = projetoService.criarProjeto(projetoNovoDto);
+        var projeto = projetoService.criarProjeto(projetoDto);
 
         return ResponseEntity.ok(projeto);
     }
 
     @PostMapping("/atualizar")
     public ResponseEntity<ApiResponse<Projeto>> updateProjeto(
-            @RequestBody @Validated(ProjetoNovoDto.OnUpdate.class) ProjetoNovoDto projetoNovoDto) {
+            @RequestBody @Validated(ProjetoNovoDto.OnUpdate.class) ProjetoDto projetoDto) {
 
-        var projeto = projetoService.atualizarProjeto( projetoNovoDto);
+        var projeto = projetoService.atualizarProjeto( projetoDto);
 
         return ResponseEntity.ok(projeto);
     }

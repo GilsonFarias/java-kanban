@@ -2,20 +2,20 @@ package com.fac.kanban.Application.Services;
 
 import org.springframework.stereotype.Service;
 
-import com.fac.kanban.Application.DTOs.ProjetoNovoDto;
+import com.fac.kanban.Application.DTOs.ProjetoDto;
 import com.fac.kanban.Application.Exceptions.ApiResponse;
 import com.fac.kanban.Domain.Entities.Projeto;
 
 @Service
 public interface IProjetoService {
 
-    ApiResponse<Projeto> criarProjeto(ProjetoNovoDto projetoNovoDto);
+    ApiResponse<ProjetoDto> criarProjeto(ProjetoDto projetoDto);
 
-    ApiResponse<Projeto> buscarProjetoPorId(Long id);
+    ApiResponse<ProjetoDto> buscarProjetoPorId(Long id);
 
-    ApiResponse<Projeto> listarProjetos();
+    ApiResponse<ProjetoDto> listarProjetos();
 
-    ApiResponse<Projeto> atualizarProjeto(ProjetoNovoDto projetoNovoDto);
+    ApiResponse<Projeto> atualizarProjeto(ProjetoDto projetoDto);
 
     ApiResponse<Void> deletarProjeto(Long id);
 
