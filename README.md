@@ -18,6 +18,7 @@ API RESTful desenvolvida com Java Spring Boot, seguindo princípios de Clean Arc
 
 # Sobre o Projeto
 Kanban API, tem como objetivo gerenciar projetos, responsáveis e tarefas, permitindo:
+
 	- Criação e atualização de projetos;
 	- Associação de responsáveis a projetos;
 	- Controle de status e prazos;
@@ -25,6 +26,7 @@ Kanban API, tem como objetivo gerenciar projetos, responsáveis e tarefas, permi
 
 # Clean Architecture
 Kanban
+
 	Application/ # Serviços, validadores e regras de negócio
 	Domain/ # Entidades e interfaces (contratos)
 	Infra/ # Implementações de repositórios e persistência
@@ -46,6 +48,7 @@ Kanban
 
 
 # Estrutura de Diretórios
+
 src/
  -_ main/
  -_ java/com/fac/kanban/
@@ -70,6 +73,7 @@ src/
 
 
 # Requisitos
+
 Antes de iniciar, certifique-se de ter instalado:
 - Java 21
 - Maven 3.8
@@ -78,6 +82,7 @@ Antes de iniciar, certifique-se de ter instalado:
 
 
 # Configurar o banco de dados 
+
 Edite o arquivo src/main/resources/application.properties.yml: 
 
 spring.application.name=kanban
@@ -90,6 +95,7 @@ server.port: 8080
 Acesse: http://localhost:8080 
 
 # Endpoints Principais
+
 Método	Endpoint	Descrição
 GET	/api/v1/projetos	Lista todos os projetos
 GET	/api/v1/projetos/{id}	Retorna um projeto específico
@@ -101,6 +107,7 @@ POST	/api/v1/projetos/{id}/responsaveis
 
 
 # Instalação e Execução
+
 Clonar o repositório
 bash
 git clone https://github.com/GilsonFarias/java-kanban.git
@@ -108,5 +115,7 @@ cd kanban-api
 
 
 Autor
+
 Gilson Farias
 gilsonfarias.dev@gmail.com
+
