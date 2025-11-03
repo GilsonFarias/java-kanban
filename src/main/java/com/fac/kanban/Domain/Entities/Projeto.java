@@ -1,7 +1,6 @@
 package com.fac.kanban.Domain.Entities;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,16 +30,16 @@ public class Projeto {
     private Integer status;
     
     @Column(name = "dt_inicio_previsto")
-    private Date dtInicioPrevisto;
+    private LocalDateTime dtInicioPrevisto;
     
     @Column(name = "dt_termino_previsto")
-    private Date dtTerminoPrevisto;
+    private LocalDateTime dtTerminoPrevisto;
     
     @Column(name = "dt_inicio_realizado")
-    private Date dtInicioRealizado;
+    private LocalDateTime dtInicioRealizado;
     
     @Column(name = "dt_termino_realizado")
-    private Date dtTerminoRealizado;
+    private LocalDateTime dtTerminoRealizado;
 
     @Column(name = "dias_atraso")
     private float diasAtraso;
@@ -53,8 +52,8 @@ public class Projeto {
 
     public Projeto() { }
 
-    public Projeto(Long id, String nome, Integer status, Date dtInicioPrevisto, Date dtTerminoPrevisto,
-    Date dtInicioRealizado, Date dtTerminoRealizado, float diasAtraso, float percTempoRestante) {
+    public Projeto(Long id, String nome, Integer status, LocalDateTime  dtInicioPrevisto, LocalDateTime dtTerminoPrevisto,
+    LocalDateTime dtInicioRealizado, LocalDateTime dtTerminoRealizado, float diasAtraso, float percTempoRestante) {
         this.id = id;
         this.nome = nome;
         this.status = status;
@@ -90,35 +89,35 @@ public class Projeto {
         this.status = status;
     }
 
-    public Date getDtInicioPrevisto() {
+    public LocalDateTime getDtInicioPrevisto() {
         return dtInicioPrevisto;
     }
 
-    public void setDtInicioPrevisto(Date dtInicioPrevisto) {
+    public void setDtInicioPrevisto(LocalDateTime dtInicioPrevisto) {
         this.dtInicioPrevisto = dtInicioPrevisto;
     }
 
-    public Date getDtTerminoPrevisto() {
+    public LocalDateTime getDtTerminoPrevisto() {
         return dtTerminoPrevisto;
     }
 
-    public void setDtTerminoPrevisto(Date dtTerminoPrevisto) {
+    public void setDtTerminoPrevisto(LocalDateTime dtTerminoPrevisto) {
         this.dtTerminoPrevisto = dtTerminoPrevisto;
     }
 
-    public Date getDtInicioRealizado() {
+    public LocalDateTime getDtInicioRealizado() {
         return dtInicioRealizado;
     }
 
-    public void setDtInicioRealizado(Date dtInicioRealizado) {
+    public void setDtInicioRealizado(LocalDateTime dtInicioRealizado) {
         this.dtInicioRealizado = dtInicioRealizado;
     }
 
-    public Date getDtTerminoRealizado() {
+    public LocalDateTime getDtTerminoRealizado() {
         return dtTerminoRealizado;
     }
 
-    public void setDtTerminoRealizado(Date dtTerminoRealizado) {
+    public void setDtTerminoRealizado(LocalDateTime dtTerminoRealizado) {
         this.dtTerminoRealizado = dtTerminoRealizado;
     }
 
@@ -138,10 +137,13 @@ public class Projeto {
         this.percTempoRestante = percTempoRestante;
     }
 
-    public void setDtInicioRealizado(LocalDate now) {
-        // TODO Auto-generated method stub
+    /*
+     * 
+     public void setDtInicioRealizado(LocalDate now) {
+        // Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setDtInicioRealizado'");
     }
+    */
 
 
 }

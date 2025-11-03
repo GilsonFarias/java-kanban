@@ -1,6 +1,6 @@
 package com.fac.kanban.Domain.Entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,9 +13,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "projeto_responsavel")
+@Table(name = "projeto_responsavel", uniqueConstraints = { @UniqueConstraint(columnNames = { "projeto_id", "responsavel_id" })})
 public class ProjetoResponsavel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,19 +31,17 @@ public class ProjetoResponsavel {
     private Responsavel responsavel;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "dt_inicio")
-    private Date dt_inicio;
+    @Column(name = "dt_registro", nullable = false, columnDefinition = "DATE DEFAULT (CURRENT_DATE)")
+    private Date dtRegistro;
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "dt_fim")
-    private Date dt_fim;
+    public ProjetoResponsavel() {
+    }
 
-    public ProjetoResponsavel(Long id, Projeto projeto, Responsavel responsavel, Date dt_inicio, Date dt_fim) {
+    public ProjetoResponsavel(Long id, Projeto projeto, Responsavel responsavel, Date dtRegistro) {
         this.id = id;
         this.projeto = projeto;
         this.responsavel = responsavel;
-        this.dt_inicio = dt_inicio;
-        this.dt_fim = dt_fim;
+        this.dtRegistro = dtRegistro;
     }
 
     public Long getId() {
@@ -63,17 +62,12 @@ public class ProjetoResponsavel {
     public void setResponsavel(Responsavel responsavel) {
         this.responsavel = responsavel;
     }
-    public Date getDt_inicio() {
-        return dt_inicio;
+    public Date getDtRegistro() {
+        return dtRegistro;
     }
-    public void setDt_inicio(Date dt_inicio) {
-        this.dt_inicio = dt_inicio;
+    public void setDtRegistro(Date dtRegistro) {
+        this.dtRegistro = dtRegistro;
     }
-    public Date getDt_fim() {
-        return dt_fim;
-    }
-    public void setDt_fim(Date dt_fim) {
-        this.dt_fim = dt_fim;
-    }
+
 
 }
