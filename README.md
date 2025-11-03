@@ -49,27 +49,27 @@ Kanban
 
 # Estrutura de Diretórios
 
-src/
- -_ main/
- -_ java/com/fac/kanban/
- --__ App
- ---___ Controller/
-­ --__ Application/
- ---___ DTOs/
- ---___ Exceptions/
- ---___ Services/
- ---___ Validations/
- --__ Domain/
- ---___ Entities/
- ---___ Enums/
- ---___ Repositories/
- ---___ Services/
- --__ Infra/
- ---___ Repositories/
- --__ Presentation/
- --__ Controllers/
- -_ resources/
- --__ application.properties.yml
+- src/
+ - _ main/
+ - _ java/com/fac/kanban/
+ - __ App
+ - ___ Controller/
+­ - __ Application/
+ - ___ DTOs/
+ - ___ Exceptions/
+ - ___ Services/
+ - ___ Validations/
+ - __ Domain/
+ - ___ Entities/
+ - ___ Enums/
+ - ___ Repositories/
+ - ___ Services/
+ - __ Infra/
+ - ___ Repositories/
+ - __ Presentation/
+ - __ Controllers/
+ - _ resources/
+ - __ application.properties.yml
 
 
 # Requisitos
@@ -97,13 +97,19 @@ Acesse: http://localhost:8080
 # Endpoints Principais
 
 Método	Endpoint	Descrição
-GET	/api/v1/projetos	Lista todos os projetos
-GET	/api/v1/projetos/{id}	Retorna um projeto específico
-POST	/api/v1/projetos	Cria um novo projeto
-PUT	/api/v1/projetos/{id}	Atualiza um projeto existente
-DELETE	/api/v1/projetos/{id}	Remove um projeto
-GET	/api/v1/responsaveis	Lista todos os responsáveis
-POST	/api/v1/projetos/{id}/responsaveis	
+GET	   | /api/projetos/listar		Lista todos os projetos
+GET	   | /api/projetos/{id}			Retorna um projeto específico
+POST   | /api/projetos/criar		Cria um novo projeto
+PUT	   | /api/projetos/atuaizar		Atualiza um projeto existente
+DELETE | /api/projetos/deletar/{id}	Remove um projeto
+GET	   | /api/responsaveis/listar		Lista todos os responsáveis
+GET	   | /api/responsaveis/{id}			Retorna um responsável específico
+POST   | /api/responsaveis/criar		Cria um novo projeto
+PUT	   | /api/responsaveis/atualizar	Atualiza um responsável existente
+DELETE | /api/responsaveis/deletar/{id}	Remove um projeto
+
+
+
 
 
 # Instalação e Execução
@@ -118,4 +124,5 @@ Autor
 
 Gilson Farias
 gilsonfarias.dev@gmail.com
+
 
