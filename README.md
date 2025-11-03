@@ -113,16 +113,17 @@ Acesse: http://localhost:8080
 # Instalação e Execução
 
 Clonar o repositório
-https://github.com/GilsonFarias/java-kanban
-bash
-git clone https://github.com/GilsonFarias/java-kanban.git
-cd kanban-api
+- https://github.com/GilsonFarias/java-kanban
+- bash
+- git clone https://github.com/GilsonFarias/java-kanban.git
+- cd kanban-api
 
 
 # Autor
 
 Gilson Farias
 gilsonfarias.dev@gmail.com
+
 
 
 
