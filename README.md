@@ -85,28 +85,29 @@ Antes de iniciar, certifique-se de ter instalado:
 
 Edite o arquivo src/main/resources/application.properties.yml: 
 
-spring.application.name=kanban
-spring.jpa.hibernate.ddl-auto=update
-spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/kanban
-spring.datasource.username=<usuario>
-spring.datasource.password=<senha>
-server.port: 8080
+ - spring.application.name=kanban
+ - spring.jpa.hibernate.ddl-auto=update
+ - spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/kanban
+ - spring.datasource.username=<usuario>
+ - spring.datasource.password=<senha>
+ - server.port: 8080
 
 Acesse: http://localhost:8080 
 
 # Endpoints Principais
 
-Método	Endpoint	Descrição
-GET	   | /api/projetos/listar		Lista todos os projetos
-GET	   | /api/projetos/{id}			Retorna um projeto específico
-POST   | /api/projetos/criar		Cria um novo projeto
-PUT	   | /api/projetos/atuaizar		Atualiza um projeto existente
-DELETE | /api/projetos/deletar/{id}	Remove um projeto
-GET	   | /api/responsaveis/listar		Lista todos os responsáveis
-GET	   | /api/responsaveis/{id}			Retorna um responsável específico
-POST   | /api/responsaveis/criar		Cria um novo projeto
-PUT	   | /api/responsaveis/atualizar	Atualiza um responsável existente
-DELETE | /api/responsaveis/deletar/{id}	Remove um projeto
+# Método| Endpoint					| Descrição
+
+ - GET	   	| /api/projetos/listar				Lista todos os projetos
+ - GET	   	| /api/projetos/{id}				Retorna um projeto específico
+ - POST   	| /api/projetos/criar				Cria um novo projeto
+ - PUT	   	| /api/projetos/atuaizar			Atualiza um projeto existente
+ - DELETE 	| /api/projetos/deletar/{id}		Remove um projeto
+ - GET	   	| /api/responsaveis/listar			Lista todos os responsáveis
+ - GET	   	| /api/responsaveis/{id}			Retorna um responsável específico
+ - POST   	| /api/responsaveis/criar			Cria um novo projeto
+ - PUT	   	| /api/responsaveis/atualizar		Atualiza um responsável existente
+ - DELETE 	| /api/responsaveis/deletar/{id}	Remove um projeto
 
 
 
@@ -124,5 +125,6 @@ Autor
 
 Gilson Farias
 gilsonfarias.dev@gmail.com
+
 
 
