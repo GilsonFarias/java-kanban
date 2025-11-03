@@ -11,9 +11,6 @@ API RESTful desenvolvida com Java Spring Boot, seguindo princípios de Clean Arc
 - [Instalação e Execução](#instalação-e-execução)
 - [Configuração do Banco de Dados](#configuração-do-banco-de-dados)
 - [Endpoints Principais](#endpoints-principais)
-- [Validações e Respostas](#validações-e-respostas)
-- [Testes](#testes)
-- [Contribuição](#contribuição)
 - [Autor](#autor)
 
 # Sobre o Projeto
@@ -116,15 +113,17 @@ Acesse: http://localhost:8080
 # Instalação e Execução
 
 Clonar o repositório
+https://github.com/GilsonFarias/java-kanban
 bash
 git clone https://github.com/GilsonFarias/java-kanban.git
 cd kanban-api
 
 
-Autor
+# Autor
 
 Gilson Farias
 gilsonfarias.dev@gmail.com
+
 
 
 
